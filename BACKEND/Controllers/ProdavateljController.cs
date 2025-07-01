@@ -1,4 +1,5 @@
 ﻿using BACKEND.Data;
+using BACKEND.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,8 +35,28 @@ namespace BACKEND.Controllers
                 return BadRequest(e);
             }
 
+        }
+        [HttpPost]        
+        public IActionResult Post(Prodavatelj prodavatelj)
+        {
+            try
+            {
+                _context.Prodavatelji.Add(prodavatelj);
+                _context.SaveChanges();
+                return StatusCode(StatusCodes.Status201Created, prodavatelj);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+
+            }
 
         }
+
+
+
+
+
        
     }
 }
