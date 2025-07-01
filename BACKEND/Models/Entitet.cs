@@ -1,6 +1,9 @@
 ﻿namespace BACKEND.Models
 {
-    public class Entitet
+    public abstract class Entitet
     {
+        public int Sifra { get; set; }
+
     }
 }
+
