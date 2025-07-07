@@ -1,11 +1,18 @@
-﻿
+﻿ALTER DATABASE db_abb7d2_wp8_admin SET SINGLE_USER WITH 
+ROLLBACK IMMEDIATE;
+GO
+ALTER DATABASE db_abb7d2_wp8_admin COLLATE Latin1_General_100_CI_AS_SC_UTF8
+GO
+ALTER DATABASE db_abb7d2_wp8_admin SET MULTI_USER;
+GO	
 
-use master;
-go
-drop database if exists poljoprivrednaaplikacija;
-go
-create database poljoprivrednaaplikacija collate Croatian_CI_AS;
-go
+
+--use master;
+--go
+--drop database if exists poljoprivrednaaplikacija;
+--go
+--create database poljoprivrednaaplikacija collate Croatian_CI_AS;
+--go
 
 use poljoprivrednaaplikacija
 
