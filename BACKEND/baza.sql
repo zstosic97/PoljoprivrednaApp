@@ -1,9 +1,9 @@
-﻿ALTER DATABASE db_abb7d2_wp8_admin SET SINGLE_USER WITH 
+﻿ALTER DATABASE db_abb7d2_wp8 SET SINGLE_USER WITH 
 ROLLBACK IMMEDIATE;
 GO
-ALTER DATABASE db_abb7d2_wp8_admin COLLATE Latin1_General_100_CI_AS_SC_UTF8
+ALTER DATABASE db_abb7d2_wp8 COLLATE Latin1_General_100_CI_AS_SC_UTF8
 GO
-ALTER DATABASE db_abb7d2_wp8_admin SET MULTI_USER;
+ALTER DATABASE db_abb7d2_wp8 SET MULTI_USER;
 GO	
 
 
@@ -14,7 +14,7 @@ GO
 --create database poljoprivrednaaplikacija collate Croatian_CI_AS;
 --go
 
-use poljoprivrednaaplikacija
+--use poljoprivrednaaplikacija
 
 Create table prodavatelji(
 sifra int not null primary key identity(1,1),
