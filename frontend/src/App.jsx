@@ -5,7 +5,6 @@ import NavBarEdunova from './components/NavBarEdunova'
 import { Route, Routes } from 'react-router-dom'
 import { RouteNames } from './constants'
 import Pocetna from './pages/Pocetna'
-import SmjeroviPregled from './pages/prodavatelji/ProdavateljiPregled'
 import ProdavateljiPregled from './pages/prodavatelji/ProdavateljiPregled'
 
 
@@ -15,13 +14,15 @@ function App() {
   return (
     <Container>
       <NavBarEdunova />
-
-      <Routes>
+<Container className="app">
+  <Routes>
         <Route path={RouteNames.HOME} element={<Pocetna />} />
 
         <Route path={RouteNames.PRODAVATELJ_PREGLED} element={<ProdavateljiPregled />} />
         
       </Routes>
+      </Container>
+
       <hr />
       &copy; Zlatko
     </Container>

@@ -19,6 +19,16 @@ builder.Services.AddDbContext<EdunovaContext>(o =>
 }
 );
 
+builder.Services.AddCors(o =>
+{
+    o.AddPolicy("CorsPolicy", p =>
+        {
+            p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();   
+
+        });
+
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -38,5 +48,11 @@ app.UseSwaggerUI(p =>
 });
 
 app.MapControllers();
+
+app.UseStaticFiles();//omogu?i korištenje stati?nih datoteka
+app.UseDefaultFiles(); //datoteke se naalaze u wwwroot
+app.MapFallbackToFile("index.html"); //ako ne?ega nema idi na index.html
+
+app.UseCors("CorsPolicy");
 
 app.Run();
